@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% set css %}
+      {% include "css/prism.css" %}
+      {% include "css/style.css" %}
+      {% include "css/leerdoelen.css" %}
+      {% if title == "Introductie" %}
+        {% include "css/introductie.css" %}
+      {% elif title == "Leerdoelen" %}
+        {% include "css/leerdoelen.css" %}
+        {% include "css/regular_text.css" %}
+      {% else  %}
+        {% include "css/regular_text.css" %}
+      {% endif %}
+      {% include "css/text.css" %}
+    {% endset %}
+    <style>
+      {{ css | safe }}
+    </style>
+    <title>{{ course_title }}</title>
+</head>
+<body>
+    <header>
+      <nav id="top">   
+        <a href="#" onclick="toggleNav()"><img src="/_assets/hamburger_white.svg" alt="menu"  eleventy:widths="20"></a>
+        <ul>
+      {% for p in collections[tags] | postsAscending %}
+          <li><a href="{{ p.url }}" {% if p.url==page.url %} class="active" {% endif %}>{{ p.data.title }}</a></li>
+      {% endfor %}
+        </ul>
+      </nav>
+      <nav id="side">   
+        <a href="#" onclick="toggleNav()"><img src="/_assets/hamburger_white.svg" alt="menu"  eleventy:widths="20"></a>
+        <ul>
+      {% for p in collections[tags] | postsAscending %}
+          <li><a href="{{ p.url }}" {% if p.url==page.url %} class="active" {% endif %}>{{ p.data.title }}</a></li>
+      {% endfor %}
+        </ul>
+      </nav>
+  </header>
+  <div id="page_wrapper">
+  {% block layout %}{% endblock %} 
+
+  </div>
+
+      <footer>
+
+    </footer>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        setlinks();
+        first_section = document.querySelectorAll('aside ul a')[0];
+        console.log(first_section);
+        showSection(first_section);
+      });
+
+
+      function setlinks() {
+        document.querySelectorAll('aside ul a').forEach(el => {
+          el.addEventListener('click', function(event) {
+              event.preventDefault();
+              const targetId = this
+              showSection(targetId);
+          });
+        });
+        }
+
+      function hidePanel() {
+        console.log("hidePanel");
+        const panel = document.getElementById('inhoudsopgave');
+        const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
+        console.log(panel);
+        panel.style.flex = 0;
+        panel.style.width = '40px';
+        panel.style.padding = 0;
+        panel.style.overflow = 'hidden';
+        hiddenPanel.style.display = 'block';
+        hiddenPanel.style.top = '10px';
+      }
+
+      function showPanel() {
+        console.log("showPanel");
+        const panel = document.getElementById('inhoudsopgave');
+        const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
+        panel.style.flexBasis = 'content';
+        panel.style.padding = '1rem';
+        panel.style.overflow = 'auto';
+        hiddenPanel.style.display = 'none';
+      }
+
+      function toggleNav() {
+        const nav = document.querySelector('nav#side ul');
+        if (nav.style.display === 'flex')  {
+          nav.style.display = 'none';
+        } else {
+          nav.style.display = 'flex';
+        }
+      }
+      
+
+
+      function showSection(link) {
+        id = link.getAttribute('href').substring(1);
+        document.querySelectorAll('div.section').forEach(el => el.classList.remove('show'));
+        const kop = document.getElementById(id);
+            console.log(kop);
+        document.querySelectorAll('aside ul a').forEach(el => el.style.textDecoration = "none");
+        link.style.textDecoration = "underline";
+        if (kop) {
+                document.querySelectorAll('div.section').forEach(el => el.classList.add('hide')); 
+                console.log(kop.parentElement)
+                kop.parentElement.classList.remove('hide')
+                kop.parentElement.classList.add('show')
+            }
+        }   
+    </script>
+    </body> 
+</html>

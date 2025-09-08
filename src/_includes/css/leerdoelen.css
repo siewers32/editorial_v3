@@ -1,0 +1,79 @@
+details {
+    /* border-bottom: 1px solid #ccc; */
+    box-sizing: border-box;
+    border-radius: 1px;
+    margin-bottom: 1rem;
+    display: block;
+    outline: none;
+    padding: 0 0 0 0 ;
+    text-align: left;
+    transition: .4s;
+    background-color:var(--light-grey);
+    width:100%;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+summary {
+    font-weight: 700;
+    padding-left: 38px;
+    cursor: pointer;
+    list-style: none;
+    /* Verberg de standaard marker */
+    position: relative;
+
+}
+
+summary a {
+    color:var(--blue);
+    text-decoration: none;
+
+}
+
+summary::before {
+    content: '';
+    background-image: url('/_assets/right-arrow.svg');
+    transform: rotate(90deg);
+
+    background-size: contain;
+    /* Zorgt ervoor dat de afbeelding binnen de box past */
+    background-repeat: no-repeat;
+    display: inline-block;
+    /* Maak het element een blok-element */
+    width: 20px;
+    /* Stel de gewenste grootte in */
+    height: 20px;
+    /* Zorg voor gelijke hoogte/breedte */
+    vertical-align: middle;
+    position: absolute;
+    top:3px;
+    left: 0px;
+    /* padding-right:28px; */
+    font-size: 24px;
+    line-height: 1;
+    transition: transform 0.3s;
+}
+
+
+
+details[open] summary::before {
+    background-image: url('/_assets/right-arrow.svg');
+    transform: rotate(270deg);
+}
+
+details p {
+    font-weight: 400;
+    padding-left: 5px;
+    margin: 0;
+
+}
+
+details p.firstchild {
+    padding-top: 50px;
+}
+
+h3#leerdoelen {
+    background-color: var(--light-grey);
+    text-align:center
+}

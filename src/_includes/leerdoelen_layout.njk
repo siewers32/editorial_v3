@@ -1,0 +1,42 @@
+{% extends "page.njk" %}
+
+{% block layout %}
+    <header>
+        <div id="title">
+            <h1>{{ course_title }}</h1>
+        </div>
+        <nav>
+        {% for p in collections[tags] | postsAscending %}
+            <a href="{{ p.url }}" {% if p.url==page.url %}aria-current="page" data-state="active" {% endif %}>{{ p.data.title }}</a>
+        {% endfor %}
+        </nav>
+    </header>
+    <main>    
+        <section id="main-content">
+            <h1 id="top">{{ course_title }}</h1>
+            <h3>{{ title }}</h3>
+            <div id="inhoudsopgave">
+            <b>Inhoudsopgave</b>
+            {{ content | toc | safe }}
+            </div>
+            {{ content | safe }}
+        </section>
+        <section id="leerdoelen">
+        <h3 id="leerdoelen">Leerdoelen</h3>
+        {% for p in collections[tags] | postsAscending %}
+            {% if p.url==page.url %}
+                {% for l in p.data.leerdoelen %}
+                        <details>
+                            <summary><a>{{ l.titel }}</a></summary>
+                            <ul>
+                            {% for i in l.items %}
+                                <li>{{ i }}</li>
+                            {% endfor %}
+                            </ul>
+                        </details>
+                    {% endfor %}
+            {% endif %}
+        {% endfor %}
+        </section>
+    </main>
+{% endblock %}

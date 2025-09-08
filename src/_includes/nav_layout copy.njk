@@ -1,0 +1,38 @@
+{% extends "page.njk" %}
+
+{% block layout %}
+<div class="deltionv2-center-template">
+    <div class="deltionv2-template-container">
+        <section class="deltionv2-addbanner">
+            <div class="deltionv2-addcontent">
+                <div class="deltionv2-addcontent-header">
+                    <h2>{{ course_title }}</h2>
+                </div>
+                <div class="deltionv2-addcontent-header">
+                    {% for p in collections[tags] | postsAscending %}
+                        <a href="{{ p.url }}" {% if p.url==page.url %}aria-current="page" data-state="active" {% endif %}>{{ p.data.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+         <div class="deltionv2-content-section">
+            <section class="deltionv2-textarea">
+                {# Aangepaste css ivm color-coding van code-blocks in extra.css #}
+                <div class="deltionv2-text">
+                {# Einde aanpassing #}
+                <h1 id="top">{{ course_title }}</h1>
+                <h3>{{ title }}</h3>
+                <div id="inhoudsopgave">
+                <b>Inhoudsopgave</b>
+                {{ content | toc | safe }}
+                </div>
+                {{ content | safe }}
+
+
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

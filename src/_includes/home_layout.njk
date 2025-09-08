@@ -1,0 +1,20 @@
+{% extends "page.njk" %}
+
+{% block layout %}
+<main>
+    <section id="main-content">
+            {{ content | safe}}
+
+    </section>
+    <section id="buttons">
+        {% for c in courses.courses %}
+        <a href="{{ c.url }}" class="button-container">
+            <div>{{ c.name }}</div>
+        </a>
+        {% endfor %}
+    </section>
+</main>
+    <footer>
+
+    </footer>
+{% endblock %}

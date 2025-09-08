@@ -1,0 +1,6 @@
+{
+    "course_title": "Python",
+    "layout": "nav_layout.njk",
+    "permalink": "/python/{{ title | slug }}/{{ page.index }}",
+    "tags": "python"
+}

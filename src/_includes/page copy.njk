@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.name }} | {{ title }}</title>
+    <link rel="apple-touch-icon" href="/_pwa/edutorial-logo_orange.svg">
+    <link rel="manifest" href='/manifest.json'>
+    {% set css %}
+      {% include "css/deltion.css" %}
+      {% include "css/extra.css" %}
+      {% include "css/prism-one-light.css" %}
+    {% endset %}
+    <style>
+      {{ css | cssmin |safe }}
+    </style>
+<body>
+<div class="page_wrapper">
+    {% block layout %}{% endblock %}
+</div>
+<script>
+    if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register("{{ '/service-worker.js' |  htmlBaseUrl }}")
+      .then(registration => {
+        console.log('Service Worker geregistreerd met succes:', registration.scope);
+      })
+      .catch(err => {
+        console.log('Registratie van Service Worker mislukt:', err);
+      });
+  });
+}
+</script>
+</body>
+</html>

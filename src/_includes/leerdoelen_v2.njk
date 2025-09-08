@@ -1,0 +1,19 @@
+{% extends "page.njk" %}
+
+{% block layout %}
+
+    <main>
+        <h1 id="top">{{ course_title }}</h1>
+        {{ content | safe }}
+    </main>
+    <aside id="inhoudsopgave">
+        <div class="head">
+            <a href="#" onclick="hidePanel()"><img src="/_assets/2pijltjes.svg" alt="inklappen" style="position:relative; top:1px;" eleventy:widths="12"></a>
+            <span><b>Inhoudsopgave</b></span>
+        </div>
+        {{ content | toc | safe }}
+    </aside>
+    <aside id="hiddeninhoudsopgave">
+            <a href="#" onclick="showPanel()"><img src="/_assets/2pijltjes.svg" alt="uitklappen" style="position:relative; top:1px; transform: rotate(180deg); " eleventy:widths="12"></a>
+    </aside>
+{% endblock %}

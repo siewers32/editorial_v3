@@ -1,0 +1,6 @@
+{
+    "course_title": "Docker",
+    "layout": "nav_layout.njk",
+    "permalink": "/docker/{{ title | slug }}/{{ page.index }}",
+    "tags": "docker"
+}
