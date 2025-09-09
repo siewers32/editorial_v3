@@ -1,7 +1,7 @@
 :root {
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6rem ;
     color: var(--blue);
 
@@ -17,7 +17,9 @@
 
 html {
     scroll-padding-top: 60px;
+    overflow-y: scroll;
 }
+
 
 body {
     margin:0;
@@ -36,10 +38,12 @@ div#page_wrapper {
 
 
 main {
-    flex: 2;
+    /* flex: 2; */
+    flex: 1 1 200px;
     margin:0rem auto 0rem auto;
     background-color: white;
     padding: 0.5rem 2rem 2rem 2rem;
+    overflow: hidden;
 } 
 header {
     box-sizing: border-box;
@@ -126,10 +130,10 @@ a.active {
 }
 
 aside#inhoudsopgave {
-    flex-basis:content;
+    flex: 0 0 250px;
     background-color: var(--light-grey);
     padding: 1rem;
-    text-wrap: "no wrap";
+    text-wrap: nowrap;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
@@ -137,14 +141,14 @@ aside#hiddeninhoudsopgave {
     display:none;
 }
 
-aside#inhoudsopgave div.head {
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width:100%
-}
+/* aside#inhoudsopgave div.head {
+    display:block;
 
-aside#inhoudsopgave div.head a, aside#hiddeninhoudsopgave a {
+    width:100%
+} */
+
+aside#inhoudsopgave a.klapper, aside#hiddeninhoudsopgave a.klapper {
+    display:inline-block;
     background-color: white;
     border-radius: 0.2rem;
     padding: 0rem 0.5rem 0rem 0.5rem;
@@ -181,69 +185,54 @@ div.hide {
     display: none;
 }
 
-pre[class*="language-"] > code {
+/* pre[class*="language-"] > code {
     overflow-x:scroll;
-}
+} */
 
 pre[class*="language-"] {
+    background-color: var(--light-grey);
     font-size:0.9rem;
-    width:900px;
-    max-width:50vw;
-    z-index: -1;
-    display:block;
-    overflow-x:scroll;
-    line-height: 1.5rem;
-    /*white-space: pre-wrap;*/
+	overflow-x: auto; /* Voegt een horizontale scrollbalk toe wanneer nodig */
+	white-space: pre; /* Behoudt witruimte en voorkomt woordafbreking */
 }
 
-
-
+pre[class*="language-"] code[class*="language-"] {
+    display:block;
+    overflow-x: auto; /* Voegt een horizontale scrollbalk toe wanneer nodig */
+    white-space: pre; /* Behoudt witruimte en voorkomt woordafbreking */
+}
 
 code {
     background-color: var(--code-color);
     padding: 0.15rem 0.3rem;
     border-radius: 0.3rem;
     font-size: 0.9rem;
-}
-
-pre[class*="language-"] {
-	background-color: var(--light-grey);
+    width: 100%;
 }
 
 
-@media print {
-    #page-wrapper {
-        max-width:100%;
-        margin:auto;
-    }
-
-    header, aside {
-        display: none;
-    }
-
-    a {
-        text-decoration: none;
-        color: black;
-    }
-
-    a:visited {
-        color: black;
-    }
-
-    #inhoudsopgave a {
-        text-decoration: none;
-        color: black;
-        padding: 0;
-    }
-
-    body {
-        font-size: 10pt;
-        line-height: 1.4;
-        color: black
-    }
+@media (max-width:1449px) {
+  /* //test */
 }
 
-@media (max-width:767px) {
+@media (max-width:1199px) {
+    /* pre[class*="language-"] {
+        width: 800px;
+    }
+    main {
+        width: 900px;
+    }    */
+} 
+
+
+@media (max-width:750px) {
+    /* pre[class*="language-"] {
+        width: 400px;
+    } 
+    main {
+        width: 500px;
+    } 
+     */
     nav#top {
         display:none;
     }
@@ -282,11 +271,11 @@ pre[class*="language-"] {
     }
 }
 
-
-@media (max-width:1449px) {
-
+@media (max-width:550px) {
+    /* pre[class*="language-"] {
+        width: 200px;
+    }
+    main {
+        width: 300px;
+    } */
 }
-
-@media (max-width:1199px) {
-
-} 

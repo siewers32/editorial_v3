@@ -1,0 +1,31 @@
+@media print {
+    #page-wrapper {
+        max-width:100%;
+        margin:auto;
+    }
+
+    header, aside {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    a:visited {
+        color: black;
+    }
+
+    #inhoudsopgave a {
+        text-decoration: none;
+        color: black;
+        padding: 0;
+    }
+
+    body {
+        font-size: 10pt;
+        line-height: 1.4;
+        color: black
+    }
+}

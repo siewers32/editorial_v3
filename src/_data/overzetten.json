@@ -1,0 +1,104 @@
+{
+  "courses": [
+    {
+      "url": "/ai/introductie/",
+      "name": "AI",
+      "description": "Effectief gebruik van ChatGPT en bouwen van AI apps"
+    },
+    {
+      "url": "/blog/introductie/",
+      "name": "Blog",
+      "description": "Een overzicht van youtube-movies die zijn opgenomen tijdens online lessen"
+    },
+    {
+      "url": "/python/introductie/",
+      "name": "Python",
+      "description": "Beginnen met Python voor IT-ers."
+    },
+        {
+      "url": "/python_int/introductie/",
+      "name": "Python Intermediate",
+      "description": "Python voor gevorderden"
+    },
+    {
+      "url": "/blockchain/introductie/",
+      "name": "Blockchain",
+      "description": "Blockchain oriëntatie"
+    },
+    {
+      "url": "/php/introductie/",
+      "name": "Starten met PHP",
+      "description": "Starten met 1 van de meest populaire programmeertalen voor het maken van websites en applicaties"
+    },
+    {
+      "url": "/php2/introductie/",
+      "name": "PHP Object georiënteerd",
+      "description": "Introductie tot object geörienteerd programmeren. Voorbereiding op het werken met frameworks."
+    },
+    {
+      "url": "/html/introductie/",
+      "name": "HTML 5",
+      "description": "Absolute basiscursus. De beste plek om te beginnen met software development."
+    },
+    {
+      "url": "/css/introductie/",
+      "name": "CSS",
+      "description": "Beginnen met het ontwerpen en vormgeven van websites en applicaties."
+    },
+    {
+      "url": "/git/introductie/",
+      "name": "Versiebeheer met Git",
+      "description": "Starten met versiebeheer en het veilig stellen van bestanden met Git. Opstap naar het samenwerken in projecten."
+    },
+    {
+      "url": "/laravel_api/introductie/",
+      "name": "Laravel API",
+      "description": "Back- en frontend applicaties met Vue en Laravel."
+    },
+    {
+      "url": "/laravel/introductie/",
+      "name": "Laravel",
+      "description": "Fullstack applicaties met Laravel maken."
+    },
+    {
+      "url": "/javascript/introductie/",
+      "name": "Javascript",
+      "description": "Beginnen met javascript. Elementen in de browser interactief maken."
+    },
+    {
+      "url": "/dbq/introductie/",
+      "name": "Database queries",
+      "description": "Basiscursus voor developers en IT-ers. Alles over het opvragen en opslaan van gegevens in databases."
+    },
+    {
+      "url": "/dbo/introductie/",
+      "name": "Database ontwerp",
+      "description": "Efficiënt leren ontwerpen van relationele databases."
+    },
+    {
+      "url": "/examen/introductie/",
+      "name": "Examenvoorbereiding",
+      "description": "Voorbereiding op het beroepsexamen in de vorm van het examenproject op school."
+    },
+    {
+      "url": "/projecten/introductie/",
+      "name": "Projecten",
+      "description": "Samenwerken in projecten."
+    },
+    {
+      "url": "/zt/introductie/",
+      "name": "Technologie en zorg",
+      "description": "Alles over de activiteiten en bevindingen vanuit het practoraat Technologie en zorg."
+    },
+    {
+      "url": "/ai_engineer/introductie/",
+      "name": "AI engineer",
+      "description": "Wat heb je nodig om AI engineer te worden?"
+    },
+    {
+      "url": "/docker/introductie/",
+      "name": "Docker",
+      "description": "Wat heb je nodig om Docker te gebruiken?"
+    }
+  ]
+}

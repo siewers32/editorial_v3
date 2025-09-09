@@ -77,11 +77,14 @@
         const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
         console.log(panel);
         panel.style.flex = 0;
-        panel.style.width = '40px';
+        //panel.style.width = '0px';
         panel.style.padding = 0;
         panel.style.overflow = 'hidden';
+        hiddenPanel.style.position = 'absolute';
         hiddenPanel.style.display = 'block';
-        hiddenPanel.style.top = '10px';
+        hiddenPanel.style.top = '60px';
+        hiddenPanel.style.right = '10px';
+        hiddenPanel.style.zIndex = 100;
       }
 
       function showPanel() {
